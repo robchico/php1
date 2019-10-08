@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Ejemplo Básico de JavaScript</title>
+</head>
+<body>
+    <h2>Código fuente de un ejemplo básico con JavaScript
+    </h2>
+    <script type="text/javascript">
+        // Definimos variables.
+        var nombre, apellidos, edad, hermanos;
+        nombre = "Rafa";
+        apellidos = "Martinez Díaz";
+        edad = 38;
+        hermanos = 3;
+        // Imprimo el nombre y los apellidos.
+        document.write("Hola " + nombre + " " + apellidos);
+        // Imprimo un salto de línea.
+        document.write("<br/>");
+        // Imprime la edad y el número de hermanos.
+        document.write(nombre + " tienes " + edad + " años y además tienes " + hermanos + " hermanos.");// Fíjate en la diferencia entre las dos siguientes lineas.
+        document.write("Dentro de 15 años tu edad será " + edad + 15 + ".<br/>");
+        document.write("Dentro de 15 años tu edad será " + (edad + 15) + ".<br/>");
+        // Tu nombre escrito 50 veces.
+        for (i = 1; i <= 50; i++)
+        {
+            document.write(nombre + ",");
+        }
+        //var subVentana=window.open("nueva.html","nueva","height=800,width=600");//abre una ventana nueva de tamaño determinado
+        var cadena = "El parapente es un deporte de riesgo medio";
+        document.write("La longitud de la cadena es: " + cadena.length + "<br/>");
+        document.write(cadena.toLowerCase() + "<br/>");
+        document.write(cadena.toUpperCase() + "<br/>");
+        document.write(cadena.charAt(3) + "<br/>");
+        document.write(cadena.indexOf('pente') + "<br/>");
+        document.write(cadena.substring(2, 9) + "<br/>");
+        document.write(Math.cos(3) + "<br />");
+        document.write(Math.asin(0) + "<br />");
+        document.write(Math.max(0, 150, 30, 20, 38) + "<br />");
+        document.write(Math.pow(7, 2) + "<br />");
+        document.write(Math.round(0.49) + "<br />");
+        var num = new Number(13.3714);
+        document.write(num.toPrecision(3) + "<br />");
+        document.write(num.toFixed(1) + "<br />");
+        document.write(num.toString(2) + "<br />");
+        document.write(num.toString(8) + "<br />");
+        document.write(num.toString(16) + "<br />");
+        document.write(Number.MIN_VALUE);
+        document.write(Number.MAX_VALUE);
+        document.write("<br/>");
+        var bool = new Boolean(1);
+        document.write(bool.toString() + "<br/>");
+        document.write(bool.valueOf() + "<br/>");
+
+        var d = new Date();
+        document.write(d.getFullYear()+ "<br/>");
+        document.write(d.getMonth()+ "<br/>");
+        document.write(d.getUTCDay()+ "<br/>");
+        var d2 = new Date(5, 28, 2011, 22, 58, 00);
+        d2.setMonth(0);
+        d.setFullYear(2020);
+        document.write(d2.getFullYear()+ "<br/>");
+        document.write(d2.getMonth()+ "<br/>");
+        document.write(d2.getUTCDay()+ "<br/>");
+    </script>
+</body>
+</html>
+

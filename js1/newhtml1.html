@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; 
+              charset=utf-8"/>
+        <title>Tarea 2 - DWEC</title>
+    </head>
+    <body>
+        <!-- Cabecera de la página -->
+        <h2>Tarea 2 - Desarrollo Web en Entorno Cliente</h2>
+        <h3>Roberto Chico Perez</h3>
+        <script type="text/javascript">
+
+            // Inicializamos las variables a utilizar
+            var a = 7, b = 8, c = 9, i = 0;
+            
+            //estilo de la tabla para presentar los datos
+            document.write("<table width=\"80%\" align=\"center\" \n\
+                cellspacing=\"0\" bordercolor=\"#000000\" \n\
+                bgcolor=\"#FFCC99\" margin=\"2\"><tr>");
+            document.write("<td><h3>TABLA DE MULTIPLICAR DEL 7</h3><br/>");
+
+            for (i = 1; i <= 10; i++) {
+                document.write(a + " x " + i + " = " + a * i + "<br/>");
+            }
+            document.write("</td><td>");
+            // Inicializamos la variable i para poder utilizarla de nuevo
+            i = 1;
+
+            // Bucle 'while' para la tabla de sumar del 8 
+            document.write("<td><h3>TABLA DE SUMAR DEL 8</h3><br/>");
+            while (i <= 10) {
+                document.write(b + " + " + i + " = " + (b + i) + "<br/>");
+                i++;
+            }
+            document.write("</td><td>");
+            // Inicializamos la variable i para poder utilizarla de nuevo
+            i = 1;
+
+            // Bucle do...while para la tabla de dividir del 9
+            document.write("<td><h3>TABLA DE DIVIDIR DEL 9</h3><br />");
+            do {
+                if ((c / i) % 1 === 0) {
+                    document.write(c+"/"+i+ " = " + (c / i) + "<br/>");
+                } else {
+                    document.write(c+"/"+i+ " = " + (c / i).toFixed(2)
+                            + "<br/>");
+                }
+
+                i++;
+            } while (i <= 10);
+
+            document.write("</td></tr>");
+            // El desplazamiento a la derecha implica división por 2
+            // 2 elevado a 3 es igual a 8 por lo que para dividir entre 8 
+            // hemos de poner >>3
+            document.write("<tr><td><h3>125/8 con \n\
+                desplazamiento de bits = " +(125 >> 3) + " </h3>");
+
+
+            // El desplazamiento a la izquierda implica 
+            // multiplicación por 2
+            // 2 elevado a 2 es igual a 4 por lo que para 
+            // multiplicar por 4 hemos de poner <<2
+            document.write("</td><td><h3>40x4 con \n\
+                desplazamiento de bits = " +(40 << 2) + " </h3>");
+
+            // 2 elevado a 1 es igual a 2 por lo que para dividir entre 2 
+            // hemos de poner >>1
+            document.write("</td><td><h3>25/2 con \n\
+                desplazamiento de bits = " +(25 >> 1) + " </h3>");
+
+            // 2 elevado a 4 es igual a 16 por lo que para 
+            // multiplicar por 16 hemos de poner <<4
+            document.write("</td><td><h3>10x16 con \n\
+                desplazamiento de bits = " +(10 << 4) + " </h3>");
+
+            document.write("</td></tr></table>");
+        </script>
+    </body>
+</html>
+

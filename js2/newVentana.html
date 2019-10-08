@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>nueva ventana</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" LANGUAGE="JavaScript">
+
+            // Escribimos la función que escribirá la primera parte de la tarea
+            function cuerpo() {
+                // Escribir en la nueva ventana <h3>Ejemplo de Ventana Nueva</h3>
+                document.write("<h3>Ejemplo de Ventana Nueva</h3>");
+                // Abro una tabla para contener todos los datos
+                document.write("<table>");
+                // Escribo la URL completa
+                document.write("<tr><td><b> URL Completa: </b></td><td>" + location.href + "</td></tr>");
+                // Escribo el protocolo utilizado
+                document.write("<tr><td><b> Protocolo utilizado: </b></td><td>" + location.protocol + "</td></tr>");
+                // Escribo el nombre en código del navegador
+                document.write("<tr><td><b> Nombre en c&oacute;digo del navegador: </b></td><td>" + saberNavegador() + "</td></tr>");
+                // Compruebo si se dispone de Java instalado en esta ventana
+                miJava = navigator.javaEnabled() ? "SI" : "NO";
+                // Escribo si tiene instalado Java o no
+                document.write("<tr><td>Java <b>" + miJava + "</b> disponible en esta ventana</td></tr>");
+                document.write("</table>");
+
+                //creo el iframe
+                document.write("<iframe id='frame1' width = '800px' height = '600px'></iframe>");
+                // Se supone que aquí debe haber contenido, pero el anunciante no permite que se muestre en un marco. 
+                // El motivo es ayudar a proteger la seguridad de la información que puedas escribir en este sitio.
+                paginaEnFrame("http://www.google.es");
+            }
+            function saberNavegador() {
+
+                var nom;
+                if (navigator.userAgent.indexOf('MSIE') != -1) {
+                    nom = 'Internet Explorer';
+                } else if (navigator.userAgent.indexOf('Firefox') != -1) {
+                    nom = 'Firefox';
+                } else if (navigator.userAgent.indexOf('Chrome') != -1) {
+                    nom = 'Google Chrome';
+                } else if (navigator.userAgent.indexOf('Opera') != -1) {
+                    nom = 'Opera';
+                } else {
+                    nom = 'está usando un navegador no identificado ...';
+                }
+                return nom;
+
+            }
+
+            function paginaEnFrame(url)
+            {
+                var iframe = document.getElementById("frame1");
+
+                iframe.setAttribute("src", url);
+            }
+            function cierraVentana() {
+                // Cerramos esta ventana emergente
+                this.close();
+                //recargar pagina principal
+                //window.opener.location.reload();
+            }
+        </script>
+    </head>
+    <body>
+        <script type="text/javascript" LANGUAGE="JavaScript">
+            // Imprimimos todos los datos solicitados
+            cuerpo();
+            // Ponemos un boton para cerrar esta ventana
+            document.write("<form id='miFor' action=''>");
+            document.write("	<input type='button' value='Cerrar ventana' id='abrir' onclick='cierraVentana()' />");
+            document.write("</form>");
+        </script>
+    </body>
+</html>
